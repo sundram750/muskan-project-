@@ -1,0 +1,96 @@
+# ============================================================
+#  Mental Health Project — .gitignore (Hosting ke liye)
+# ============================================================
+
+# -----------------------------------------------
+# 🖥️ LOCAL LAUNCHERS (Hosting pe kaam nahi aate)
+# -----------------------------------------------
+RUN_WEBSITE.bat
+run_website.py
+
+# -----------------------------------------------
+# 📄 LOCAL DOCUMENTATION (Server pe zaroorat nahi)
+# -----------------------------------------------
+STARTUP_GUIDE.txt
+ACCURACY_JOURNEY.md
+HIGH_ACCURACY_SUMMARY.md
+
+# -----------------------------------------------
+# 🧪 TEST FILES (Production mein nahi chahiye)
+# -----------------------------------------------
+test_about_page.py
+test_api.py
+test_confusion_matrix.py
+test_logic.py
+
+# -----------------------------------------------
+# 🛠️ DATA GENERATION SCRIPTS (One-time use only)
+# -----------------------------------------------
+generate_cleaned_dataset.py
+generate_confusion_matrix.py
+generate_roc_auc.py
+debug_brain_snippet.py
+
+# -----------------------------------------------
+# 📊 DATASET FILES (Model already trained hai)
+# -----------------------------------------------
+cleaned_dataset_1500.csv
+cleaned_dataset_1500.xlsx
+
+# -----------------------------------------------
+# 🗂️ UNUSED/DUPLICATE FOLDER
+# -----------------------------------------------
+# (outer 'app' folder — mental_health_project ke bahar wala)
+
+# -----------------------------------------------
+# 🐍 Python Cache (auto-generated)
+# -----------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# -----------------------------------------------
+# 🌍 Virtual Environment
+# -----------------------------------------------
+venv/
+env/
+.env
+.venv
+ENV/
+
+# -----------------------------------------------
+# 🪟 Windows System Files
+# -----------------------------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# -----------------------------------------------
+# 💻 IDE / Editor Files
+# -----------------------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# -----------------------------------------------
+# 📦 Build Artifacts
+# -----------------------------------------------
+dist/
+build/
+*.egg-info/
+*.egg
+.eggs/
+
+# -----------------------------------------------
+# 📝 Logs
+# -----------------------------------------------
+*.log
+pip-log.txt
+pip-delete-this-directory.txt
