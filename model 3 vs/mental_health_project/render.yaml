@@ -1,0 +1,17 @@
+# render.yaml — Auto-deploy config for Render.com
+# This file lets Render auto-detect your service settings.
+# Docs: https://render.com/docs/render-yaml-reference
+
+services:
+  - type: web
+    name: mental-health-monitor
+    env: python
+    region: oregon        # Free tier region
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app.app_enhanced:app --workers=1 --timeout=120 --bind=0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.13
+      - key: FLASK_ENV
+        value: production

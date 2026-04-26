@@ -4,6 +4,7 @@ With 90.28% Accurate Voting Ensemble Model
 """
 
 from flask import Flask, render_template, request, jsonify, send_from_directory
+from flask_cors import CORS
 import sys
 import os
 from datetime import datetime, timedelta
@@ -26,6 +27,9 @@ from utils.recommendation_engine import RecommendationEngine
 app = Flask(__name__, 
             template_folder=os.path.join(app_dir, 'templates'),
             static_folder=os.path.join(app_dir, 'static'))
+
+# Enable CORS so browser can call API from any domain (needed for online hosting)
+CORS(app)
 
 # Load Model Components
 print("\n[Loading Model Components...]")
@@ -455,4 +459,5 @@ if __name__ == '__main__':
     print(f"\n{'='*80}\n")
     
     port = int(os.environ.get('PORT', 5000))
-    app.run(debug=False, host='0.0.0.0', port=port, use_reloader=False)
+    is_production = os.environ.get('FLASK_ENV') == 'production'
+    app.run(debug=not is_production, host='0.0.0.0', port=port, use_reloader=False)
